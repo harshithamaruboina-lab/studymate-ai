@@ -63,7 +63,7 @@ export default function BottomControls({
 
         <motion.button
           type="button"
-          onClick={onSubmit}
+          onClick={() => alert("Submit button clicked")}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-shadow duration-300 hover:shadow-[0_0_32px_rgba(59,130,246,0.6)]"
