@@ -1,5 +1,7 @@
 "use client";
-
+import { signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Globe, Clock, Trash2, LogOut, AlertTriangle } from "lucide-react";
@@ -9,7 +11,16 @@ export default function AccountSettings() {
   const [language, setLanguage] = useState("en");
   const [timezone, setTimezone] = useState("ist");
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+const router = useRouter();
 
+const handleSignOut = async () => {
+  try {
+    await signOut(auth);
+    router.push("/login");
+  } catch (error) {
+    console.error(error);
+  }
+};
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] sm:p-8">
@@ -58,12 +69,13 @@ export default function AccountSettings() {
 
         <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:justify-end">
           <Button
-            variant="outline"
-            className="gap-2 border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white"
-          >
-            <LogOut className="h-4 w-4" />
-            Sign Out
-          </Button>
+  variant="outline"
+  onClick={handleSignOut}
+  className="gap-2 border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white"
+>
+  <LogOut className="h-4 w-4" />
+  Sign Out
+</Button>
         </div>
       </div>
 
