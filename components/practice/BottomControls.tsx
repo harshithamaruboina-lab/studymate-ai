@@ -52,7 +52,7 @@ export default function BottomControls({
       <div className="flex items-center gap-2">
         <motion.button
           type="button"
-          onClick={onEndSession}
+          onClick={() => alert("End session clicked")}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="flex items-center justify-center gap-1.5 rounded-xl border border-red-400/20 bg-red-400/10 px-4 py-2.5 text-sm font-medium text-red-400 transition-colors duration-200 hover:bg-red-400/20"
@@ -63,7 +63,7 @@ export default function BottomControls({
 
         <motion.button
           type="button"
-          onClick={() => alert("Submit button clicked")}
+          onClick={onSubmit}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="group relative flex items-center justify-center gap-1.5 overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-shadow duration-300 hover:shadow-[0_0_32px_rgba(59,130,246,0.6)]"
