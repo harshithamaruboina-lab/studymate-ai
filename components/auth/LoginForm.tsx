@@ -1,6 +1,7 @@
 // components/auth/LoginForm.tsx
 "use client";
 
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -11,6 +12,19 @@ import { Mail, Lock, Eye, EyeOff, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function LoginForm() {
+  const handleGoogleLogin = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+
+    await signInWithPopup(auth, provider);
+
+    alert("Google login successful!");
+
+    router.push("/dashboard");
+  } catch (error: any) {
+    alert(error.message);
+  }
+};
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -150,14 +164,15 @@ export default function LoginForm() {
 
       {/* Google */}
       <motion.button
-        type="button"
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-white/10"
-      >
-        <Globe className="h-4 w-4" />
-        Continue with Google
-      </motion.button>
+  type="button"
+  onClick={handleGoogleLogin}
+  whileHover={{ scale: 1.01 }}
+  whileTap={{ scale: 0.99 }}
+  className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/5 py-2.5 text-sm font-medium"
+>
+  <Globe className="h-4 w-4" />
+  Continue with Google
+</motion.button>
 
       {/* Bottom text */}
       <p className="mt-2 text-center text-sm text-gray-400">
