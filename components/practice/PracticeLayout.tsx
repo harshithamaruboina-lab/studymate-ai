@@ -1,6 +1,6 @@
 // components/practice/PracticeLayout.tsx
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ProgressHeader from "@/components/practice/ProgressHeader";
 import QuestionCard from "@/components/practice/QuestionCard";
@@ -64,6 +64,7 @@ createCounters().forEach(fn => fn());`,
 ];
 
 export default function PracticeLayout() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
