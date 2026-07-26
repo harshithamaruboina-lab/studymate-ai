@@ -1,8 +1,8 @@
 // components/layout/Navbar.tsx
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -66,12 +66,14 @@ export default function Navbar() {
 
         {/* Desktop CTAs */}
         <div className="hidden items-center gap-3 lg:flex">
-          <Button
-            variant="ghost"
-            className="text-gray-200 hover:text-white hover:bg-white/10"
-          >
-            Login
-          </Button>
+         <Link href="/login">
+  <Button
+    variant="ghost"
+    className="text-gray-200 hover:text-white hover:bg-white/10"
+  >
+    Login
+  </Button>
+</Link>
           <Link href="/signup">
   <Button
     className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white shadow-lg"
@@ -120,12 +122,14 @@ export default function Navbar() {
               ))}
 
               <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-4">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-center text-gray-200 hover:text-white hover:bg-white/10"
-                >
-                  Login
-                </Button>
+                <Link href="/login">
+  <Button
+    variant="ghost"
+    className="w-full justify-center text-gray-200 hover:text-white hover:bg-white/10"
+  >
+    Login
+  </Button>
+</Link>
                 <Link href="/signup">
   <Button>
     Get Started
