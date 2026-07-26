@@ -95,13 +95,13 @@ export default function PracticeLayout() {
   const handleSubmit = (): void => {
   alert("Answer submitted successfully!");
 
-  if (!isLastQuestion) {
+  if (currentIndex < totalQuestions - 1) {
     setCurrentIndex((prev) => prev + 1);
   }
 };
 
 const handleEndSession = (): void => {
-  alert("Practice session ended!");
+  alert("Session ended!");
   window.location.href = "/results";
 };
 
