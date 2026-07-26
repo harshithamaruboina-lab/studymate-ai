@@ -95,7 +95,7 @@ export default function PracticeLayout() {
   const handleSubmit = (): void => {
   alert("Answer submitted successfully!");
 
-  if (currentIndex < totalQuestions - 1) {
+  if (!isLastQuestion) {
     setCurrentIndex((prev) => prev + 1);
   }
 };
@@ -104,7 +104,6 @@ const handleEndSession = (): void => {
   alert("Session ended!");
   window.location.href = "/results";
 };
-
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[7fr_3fr] lg:px-8 lg:py-8">
       {/* Left column (~70%) */}
