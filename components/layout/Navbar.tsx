@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
           ? "bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
           : "bg-transparent border-b border-transparent"
@@ -65,12 +65,12 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTAs */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="relative z-[101] hidden items-center gap-3 lg:flex">
          <Link href="/login">
   <Button
-    variant="ghost"
-    className="text-gray-200 hover:text-white hover:bg-white/10"
-  >
+  variant="ghost"
+  className="relative z-[102] text-gray-200 hover:text-white hover:bg-white/10"
+>
     Login
   </Button>
 </Link>
