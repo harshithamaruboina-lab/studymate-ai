@@ -93,12 +93,17 @@ export default function PracticeLayout() {
   };
 
   const handleSubmit = (): void => {
-    console.log("Submitted answer:", answers[currentQuestion.id] ?? "");
-  };
+  alert("Answer submitted successfully!");
 
-  const handleEndSession = (): void => {
-    console.log("Session ended at question", currentIndex + 1);
-  };
+  if (!isLastQuestion) {
+    setCurrentIndex((prev) => prev + 1);
+  }
+};
+
+const handleEndSession = (): void => {
+  alert("Practice session ended!");
+  window.location.href = "/results";
+};
 
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[7fr_3fr] lg:px-8 lg:py-8">
