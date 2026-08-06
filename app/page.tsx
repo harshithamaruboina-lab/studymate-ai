@@ -9,7 +9,7 @@ export default function HomePage() {
     <main className="relative min-h-screen bg-[#05050a] overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Features />
+      <Features /> 
       <HowItWorks />
       <Footer />
     </main>

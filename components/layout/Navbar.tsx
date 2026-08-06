@@ -132,7 +132,7 @@ export default function Navbar() {
 </Link>
                 <Link href="/signup">
   <Button>
-    Get Started
+    Get Starte
   </Button>
 </Link>
               </div>

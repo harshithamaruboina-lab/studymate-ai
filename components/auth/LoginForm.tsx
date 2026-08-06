@@ -12,6 +12,7 @@ import { Mail, Lock, Eye, EyeOff, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function LoginForm() {
+  
   const handleGoogleLogin = async () => {
   try {
     const provider = new GoogleAuthProvider();
@@ -24,7 +25,9 @@ export default function LoginForm() {
   } catch (error: any) {
     alert(error.message);
   }
+  
 };
+
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
